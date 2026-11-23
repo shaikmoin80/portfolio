@@ -21,9 +21,9 @@ portfolio/
 
 ## 1. Preview it on your computer
 
-**Easiest:** open the `portfolio` folder and double-click `index.html`. It opens in your browser.
+**Easiest:** open the `portfolio` folder and double-click **`Run-Portfolio.bat`**. A black window opens and your browser shows the site at <http://localhost:8000/>. Close the window to stop it. Edit `js\private.local.js` once (it is created for you) to show your email and phone locally.
 
-**Better (mimics the real website):** open PowerShell and run:
+**Manual way:** open PowerShell and run:
 
 ```powershell
 cd E:\Interview\portfolio
@@ -124,8 +124,12 @@ This site is deployed by a GitHub Action (`.github/workflows/deploy.yml`). It fi
 **One-time setup for the CV (do this first):**
 1. Create a **private** repository named `portfolio-private` on github.com.
 2. Put `Shaik_Moin_CV_Cloud_Operations_SRE.pdf` in it at the top level (the exact file name matters).
-3. Create a fine-grained token: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate. Set **Repository access** to only `portfolio-private`, and **Contents: Read-only**.
-4. In `portfolio` (this public repo), add a secret `PRIVATE_REPO_TOKEN` with that token value.
+3. Create a fine-grained token: GitHub → your profile picture → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token.
+   - Token name `portfolio-cv`, Expiration 1 year (put a reminder to renew it).
+   - **Repository access** → **Only select repositories** → pick `portfolio-private`.
+   - Scroll to **Permissions** → click **Add permissions** → in the **Repository permissions** list (not Account) search for **Contents** and tick it. Its access level shows **Read-only** by default.
+   - Click **Generate token** and copy it now. It is shown only once.
+4. In `portfolio` (this public repo): Settings → Secrets and variables → Actions → New repository secret. Name `PRIVATE_REPO_TOKEN`, value = the token you copied.
 
 1. **Add the two secrets first.** Repo → **Settings → Secrets and variables → Actions → New repository secret**.
    - Name `SITE_EMAIL`, value: your email.
