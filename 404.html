@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Page not found | Moin Shaik</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23060b18'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Arial' font-weight='700' font-size='26' fill='%2322d3ee'%3EMS%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+  <!-- Styles are inline on purpose: GitHub Pages serves this page from any URL depth, so relative CSS paths would break. -->
+  <style>
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;display:grid;place-items:center;padding:24px;color:#e8eefc;background:#060b18;font-family:'Inter',system-ui,'Segoe UI',Arial,sans-serif;overflow:hidden;position:relative}
+    body::before,body::after{content:'';position:fixed;width:60vmax;height:60vmax;border-radius:50%;filter:blur(100px);opacity:.28;z-index:-1}
+    body::before{background:#2dd4bf;top:-25vmax;left:-15vmax}
+    body::after{background:#8b5cf6;bottom:-28vmax;right:-18vmax}
+    .card{max-width:520px;text-align:center;padding:48px 36px;border-radius:24px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 30px 70px -25px rgba(0,0,0,.7)}
+    .code{font-family:'Space Grotesk',system-ui,sans-serif;font-size:clamp(84px,18vw,128px);font-weight:700;line-height:1;margin:0;letter-spacing:-.04em;background:linear-gradient(120deg,#2dd4bf,#22d3ee 45%,#8b5cf6);-webkit-background-clip:text;background-clip:text;color:transparent}
+    h1{font-family:'Space Grotesk',system-ui,sans-serif;font-size:26px;margin:14px 0 8px}
+    p{color:#9aa8c7;margin:0 0 28px;line-height:1.6}
+    a.btn{display:inline-block;padding:13px 24px;border-radius:14px;font-weight:600;text-decoration:none;color:#03141b;background:linear-gradient(120deg,#2dd4bf,#22d3ee 45%,#8b5cf6);transition:transform .25s,box-shadow .25s;box-shadow:0 10px 30px -10px rgba(34,211,238,.4)}
+    a.btn:hover{transform:translateY(-2px);box-shadow:0 16px 36px -10px rgba(34,211,238,.5)}
+    a.btn:focus-visible{outline:2px solid #22d3ee;outline-offset:3px}
+    @media (prefers-reduced-motion:reduce){a.btn{transition:none}}
+  </style>
+</head>
+<body>
+  <main class="card">
+    <p class="code" aria-hidden="true">404</p>
+    <h1>This page could not be found</h1>
+    <p>The link may be broken or the page may have moved. Head back to the portfolio home page.</p>
+    <a class="btn" id="home" href="/">Back to the portfolio</a>
+  </main>
+  <script>
+    // If this is a GitHub Pages project site named "portfolio", home is /portfolio/; otherwise the site root.
+    // If your repository has a different name, change 'portfolio' below.
+    (function () {
+      var repo = 'portfolio';
+      var parts = location.pathname.split('/');
+      if (/\.github\.io$/i.test(location.hostname) && parts[1] && parts[1].toLowerCase() === repo) {
+        document.getElementById('home').setAttribute('href', '/' + parts[1] + '/');
+      }
+    })();
+  </script>
+</body>
+</html>

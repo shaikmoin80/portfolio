@@ -1,0 +1,25 @@
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors
+.vscode/
+.idea/
+*.swp
+
+# Logs and temp
+*.log
+*.tmp
+node_modules/
+_site/
+
+# Private files: keep these out of the repo
+*.docx
+*.doc
+*.private.*
+secrets.*
+.env
+js/private.local.js
+cv/*.pdf
+cv/*.doc
