@@ -178,6 +178,9 @@ html.modal-open, html.nav-open { overflow: hidden; }
 @keyframes blink { 50% { opacity: 0; } }
 .tagline { margin-top: 20px; font-size: 1.12rem; color: var(--text); max-width: 640px; font-weight: 500; }
 .hero-summary { margin-top: 14px; color: var(--muted); max-width: 640px; display: grid; gap: 10px; }
+.hero-chips { margin: 18px 0 0; max-width: 640px; }
+.chip.static { cursor: default; }
+.chip.static:hover { transform: none; color: var(--muted); border-color: var(--border); }
 .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
 .open-to { margin-top: 18px; color: var(--faint); font-size: 14px; }
 

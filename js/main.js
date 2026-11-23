@@ -101,6 +101,8 @@
 
     var sum = $('#hero-summary'); clear(sum);
     (D.summary || []).forEach(function (p) { sum.appendChild(h('p', { text: p })); });
+    var chipList = $('#hero-chips'); clear(chipList);
+    (D.heroChips || []).forEach(function (c) { chipList.appendChild(h('li', { class: 'chip static', text: c })); });
 
     // avatar: profile.jpg if it loads, otherwise the SVG placeholder
     var img = $('#avatar-img');

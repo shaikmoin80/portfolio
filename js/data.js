@@ -38,7 +38,22 @@ const PORTFOLIO = {
   /* Hero paragraph(s). Each string is one paragraph. */
   summary: [
     'Cloud operations and site reliability engineer with 11+ years in IT. I administer cloud access, triage and escalate incidents, and turn tools into services people can actually run.',
-    'Most recently, remote with Al Jazeera Media Network on GCP and Azure: IAM and SSO, monitoring and alerts, log-based diagnosis, SOPs, and stakeholder updates through breaking news and live events.'
+    'At Al Jazeera Media Network (remote, 2024 to 2026) I keep a 24x7 news platform reliable on GCP and Azure: SSO and access audits, incident command with RCA, and alerting and log-based diagnosis that surface failures early. With my team I built an in-house unified monitoring platform, with AI agents on Vertex AI Gemini drafting triage for human approval.',
+    'I automate the repetitive work: Python and Google Apps Script tooling, event-driven pipelines on Cloud Run, Pub/Sub and Cloud Tasks, and health checks that keep publishing, live video and WordPress sites watched around the clock.'
+  ],
+
+  /* Skill highlights shown as chips under the summary: what I do, at a glance. */
+  heroChips: [
+    'Cloud IAM & SSO',
+    'Incident management & RCA',
+    'Monitoring & alerting',
+    'Log analysis',
+    'SOPs & runbooks',
+    'Python & Apps Script automation',
+    'AI agents (Vertex AI Gemini)',
+    'GCP · Azure · AWS · IBM Cloud',
+    'FinOps',
+    'WordPress & Brightcove platforms'
   ],
 
   /* ---------------------------------------------------------------------------
@@ -96,7 +111,7 @@ const PORTFOLIO = {
      pillars   = the six strands. `icon` is a short symbol/emoji-free glyph.   */
   connect: {
     statement: 'One job: keep cloud services reliable, and make them operable by the people who depend on them.',
-    intro: 'Cloud Operations Engineer and Site Reliability Engineer are the same work seen from two sides. Both are access, incidents, monitoring, documentation and clear communication. That is the work I do, and the only roles this site is aimed at.',
+    intro: 'Cloud Operations Engineer and Site Reliability Engineer are the same work seen from two sides: access, incidents, monitoring, automation, documentation and clear communication. I use AI agents where they cut triage time, and a person approves anything that changes production.',
     pillars: [
       {
         icon: '⚑', title: 'Cloud IAM',
@@ -117,6 +132,16 @@ const PORTFOLIO = {
         icon: '☰', title: 'SOPs & operationalisation',
         text: 'Runbooks, Confluence, ownership and change windows so a tool keeps working after the person who set it up has moved on.',
         roles: 'Runbooks · Confluence · Ownership'
+      },
+      {
+        icon: '⌘', title: 'Automation',
+        text: 'Python, Bash and Google Apps Script that remove toil: a cross-cloud monitoring migration, access reviews, inventories and ticket routing. Event-driven pipelines on Cloud Run, Pub/Sub and Cloud Tasks run checks without anyone watching.',
+        roles: 'Python · Apps Script · Cloud Run · Pub/Sub'
+      },
+      {
+        icon: '✦', title: 'AI in operations',
+        text: 'AI agents on Vertex AI Gemini enrich alerts, summarise user impact and suggest next steps. Schema validation, redaction and Jira approval gates keep a human in control of every change.',
+        roles: 'Vertex AI Gemini · LLMs · Human approval'
       }
     ]
   },
@@ -174,12 +199,12 @@ const PORTFOLIO = {
       id: 'service', title: 'Service Engineer',
       pitch: "I treat business-critical tools (CMS, video platform, short-URL and identity services) as services with owners, SLAs, runbooks and monitoring, and I build the glue between those platforms and the engineering teams that depend on them.",
       strengths: [
-        'Operational bridge for Universal CMS (uCMS) and Brightcove Video Cloud',
+        'Operational bridge for WordPress CMS sites and Brightcove Video Cloud',
         'Zero-downtime short-URL domain migrations',
         'Least-privilege editorial role groups',
         'Service health monitoring for publishing, live streams and feeds'
       ],
-      focus: ['Brightcove', 'uCMS', 'Bl.ink', 'Google Workspace admin', 'Okta / Google SSO', 'Opsgenie', 'incident.io', 'Jira / JSM',
+      focus: ['Brightcove', 'WordPress CMS', 'Bl.ink', 'Google Workspace admin', 'Okta / Google SSO', 'Opsgenie', 'incident.io', 'Jira / JSM',
               'Cloud Monitoring', 'Chartbeat', 'GA4', 'Amplitude', 'Apple News Publisher', 'Vertex AI Gemini', 'Python'],
       projects: ['business-ops', 'media-monitoring', 'identity-governance', 'unified-monitoring']
     },
@@ -193,7 +218,7 @@ const PORTFOLIO = {
         'Runbooks and SOPs that survive staff turnover'
       ],
       focus: ['Okta / Google SSO', 'LastPass', 'OpenVPN', 'AppGate', 'GitHub IAM & Teams', 'Access governance', 'Google Workspace admin',
-              'Brightcove', 'uCMS', 'Bl.ink', 'Jira / JSM', 'Confluence', 'Runbooks', 'Google Apps Script', 'FinOps'],
+              'Brightcove', 'WordPress CMS', 'Bl.ink', 'Jira / JSM', 'Confluence', 'Runbooks', 'Google Apps Script', 'FinOps'],
       projects: ['identity-governance', 'business-ops', 'media-monitoring', 'azure-gcp-migration']
     },
     {
@@ -254,7 +279,7 @@ const PORTFOLIO = {
     { group: 'Identity & Access', items: ['Okta / Google SSO', 'AppGate', 'OpenVPN', 'LastPass', 'GitHub IAM & Teams', 'Access governance', 'Google Workspace admin'] },
     { group: 'AI & Data', items: ['Vertex AI Gemini', 'AI agents', 'LLMs', 'RAG concepts', 'Machine learning', 'SQL', 'IBM Cloud Pak for Data', 'IBM Watson',
                                  'IBM WebSphere (familiarity)'] },
-    { group: 'Business & Media Platforms', items: ['Brightcove', 'uCMS', 'Bl.ink', 'Chartbeat', 'GA4', 'Amplitude', 'Apple News Publisher', 'YouTube Studio',
+    { group: 'Business & Media Platforms', items: ['Brightcove', 'WordPress CMS', 'Bl.ink', 'Chartbeat', 'GA4', 'Amplitude', 'Apple News Publisher', 'YouTube Studio',
                                                  'DataMinr', 'MASV', 'Freestar', 'Taboola'] }
   ],
 
@@ -279,7 +304,7 @@ const PORTFOLIO = {
         'Upgraded enterprise Zabbix from v5.0 to v8.x through multi-hop DB schema upgrades across global proxy nodes in Doha, London and Washington DC.',
         'Monitored digital publishing, live HLS streams, Apple News feeds, Text-to-Speech, QE test frameworks and AdTech (Freestar, Taboola).',
         'Ran quarterly cloud lifecycle assessments and FinOps reviews; managed incidents and RCAs in Opsgenie, incident.io and JSM; defined and reported SLOs and SLAs.',
-        'Led identity governance and periodic security audits, enforced SSO, and acted as the operational bridge for uCMS and Brightcove.'
+        'Led identity governance and periodic security audits, enforced SSO, and acted as the operational bridge for WordPress CMS sites and Brightcove.'
       ],
       tags: ['GCP', 'Azure', 'Zabbix', 'Vertex AI', 'Opsgenie', 'Python', 'Apps Script']
     },
@@ -446,18 +471,18 @@ const PORTFOLIO = {
     {
       id: 'business-ops',
       kicker: 'Al Jazeera · Business tools as services',
-      title: 'uCMS, Brightcove & Short-URL Operations',
-      summary: 'Operational bridge for the Universal CMS and Brightcove Video Cloud, plus zero-downtime short-URL domain migrations.',
+      title: 'WordPress, Brightcove & Short-URL Operations',
+      summary: 'Operational bridge for WordPress CMS sites and Brightcove Video Cloud, plus zero-downtime short-URL domain migrations.',
       problem: 'Editorial teams rely on the CMS, the video platform and branded short links. Legacy API clients, editorial permissions and domain changes all needed careful handling.',
       did: [
-        'Acted as operational bridge for Universal CMS (uCMS) and Brightcove Video Cloud.',
+        'Acted as operational bridge for WordPress CMS sites and Brightcove Video Cloud.',
         'Purged 200+ legacy Brightcove API clients and defined least-privilege editorial role groups.',
         'Migrated short-URL domains with zero downtime: aja.me → aja.ws and aje.io → aje.news, using Bl.ink, DNS, TLS, 301 redirects and low TTLs.',
         'Handled Meta/Facebook user-data deletion compliance requests, and digital forensics on brand-infringement domains (WHOIS/RDAP, DNS, hosting, certificate transparency).'
       ],
       flow: ['Lower DNS TTL', 'Bl.ink + TLS ready', '301 redirects', 'Cut DNS', 'Verify & monitor'],
       flowNote: 'Pattern used for both domain migrations.',
-      stack: ['Brightcove', 'uCMS', 'Bl.ink', 'DNS', 'TLS', 'WHOIS / RDAP', 'Certificate transparency'],
+      stack: ['Brightcove', 'WordPress', 'Bl.ink', 'DNS', 'TLS', 'WHOIS / RDAP', 'Certificate transparency'],
       outcome: 'A cleaner video platform, editors with only the access they need, and short-link domains that moved without readers noticing.',
       roles: ['service', 'ops', 'techsupport']
     },
