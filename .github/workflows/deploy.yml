@@ -23,14 +23,26 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Build site and inject private contact details from secrets
+      # The full CV (with contact details) lives in a PRIVATE repository.
+      # Forks and downloads of this public repo never contain it.
+      - name: Checkout private CV repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.repository_owner }}/portfolio-private
+          token: ${{ secrets.PRIVATE_REPO_TOKEN }}
+          path: private-cv
+
+      - name: Build site, inject private details and CV
         env:
           SITE_EMAIL: ${{ secrets.SITE_EMAIL }}
           SITE_PHONE: ${{ secrets.SITE_PHONE }}
         run: |
+          set -e
+          test -f private-cv/Shaik_Moin_CV_Cloud_Operations_SRE.pdf
           mkdir _site
-          cp -r index.html 404.html css js assets cv _site/
+          cp -r index.html 404.html css js assets cv .nojekyll _site/
           rm -f _site/js/private.local.example.js
+          cp private-cv/Shaik_Moin_CV_Cloud_Operations_SRE.pdf _site/cv/
           python3 - <<'PY'
           import os
           p = "_site/js/data.js"

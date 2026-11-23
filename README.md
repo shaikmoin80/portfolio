@@ -64,7 +64,8 @@ Open the file in any editor (Cursor, VS Code, even Notepad). Keep the quotes and
 | Colours | `css/styles.css` | the variables at the top (`--accent-1`, `--accent-2`, `--accent-3`, `--bg`, …). Light theme: `[data-theme="light"]` block |
 | Fonts | `css/styles.css` and `index.html` | change `--font-body` / `--font-display` at the top of the CSS **and** the Google Fonts `<link>` in `index.html` (pick fonts at fonts.google.com) |
 | My photo | `assets/` | add a **square** image named exactly `profile.jpg`, **at least 800 × 800 px**. If it is missing, the monogram shows instead |
-| The CV download | `cv/` and `js/data.js` | replace `cv/Shaik_Moin_CV_Cloud_Operations_SRE.pdf`, or change the `file` and `label` in the `cv` list. Keep the phone and email off the website copy; send the full CV in applications. |
+| The CV download | private repo `portfolio-private` | Replace `Shaik_Moin_CV_Cloud_Operations_SRE.pdf` in that private repo, then run **Deploy site** in this repo. Nothing in this public repo changes. |
+| The CV for local preview | `cv/` (not uploaded) | Copy the full PDF into `cv/` on your PC. `.gitignore` stops it being committed. |
 | LinkedIn / GitHub buttons | `js/data.js` | `links.linkedin` and `links.github`: paste the full URL (leave `''` to hide) |
 | Phone number / email | GitHub secrets | **Settings → Secrets and variables → Actions**: `SITE_PHONE`, `SITE_EMAIL`, then re-run **Deploy site**. They are not in `data.js` (it only holds placeholders). For local preview, copy `js/private.local.example.js` to `js/private.local.js` and fill it in; that file is never uploaded. |
 | Contact section text | `js/data.js` | `contactHeading`, `contactText` |
@@ -118,7 +119,13 @@ If you named the repo `<username>.github.io`, use `https://github.com/<username>
 ---
 
 ## 4. Turn on GitHub Pages
-This site is deployed by a GitHub Action (`.github/workflows/deploy.yml`), which also fills in your private email and phone from secrets.
+This site is deployed by a GitHub Action (`.github/workflows/deploy.yml`). It fills in your email and phone from secrets, and copies the full CV from a **private** repository named `portfolio-private`, so the CV is never in this public repo.
+
+**One-time setup for the CV (do this first):**
+1. Create a **private** repository named `portfolio-private` on github.com.
+2. Put `Shaik_Moin_CV_Cloud_Operations_SRE.pdf` in it at the top level (the exact file name matters).
+3. Create a fine-grained token: GitHub → Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate. Set **Repository access** to only `portfolio-private`, and **Contents: Read-only**.
+4. In `portfolio` (this public repo), add a secret `PRIVATE_REPO_TOKEN` with that token value.
 
 1. **Add the two secrets first.** Repo → **Settings → Secrets and variables → Actions → New repository secret**.
    - Name `SITE_EMAIL`, value: your email.
