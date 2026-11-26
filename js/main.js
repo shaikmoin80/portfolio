@@ -435,6 +435,15 @@
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('open')) { set(false); btn.focus(); } });
     window.addEventListener('resize', function () { if (window.innerWidth > 860) set(false); });
 
+    // "Back to top" link: always scroll to the very top of the page
+    var toTop = $('.to-top');
+    if (toTop) toTop.addEventListener('click', function (e) {
+      e.preventDefault();
+      var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+    });
+
     var links = $$('#nav-list a');
     if ('IntersectionObserver' in window) {
       var io = new IntersectionObserver(function (entries) {
